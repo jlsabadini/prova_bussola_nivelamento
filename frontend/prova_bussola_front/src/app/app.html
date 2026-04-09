@@ -1,0 +1,123 @@
+<div>
+  <h1>Sistema de Receitas</h1>
+
+  <div>
+    <h2>Cadastrar receita</h2>
+
+    <input
+      type="text"
+      placeholder="Nome da receita"
+      [(ngModel)]="nomeReceita"
+    />
+
+    <input
+      type="number"
+      placeholder="Tempo de preparo"
+      [(ngModel)]="tempoPreparo"
+    />
+
+    <input
+      type="number"
+      placeholder="Custo aproximado"
+      [(ngModel)]="custoAproximado"
+    />
+
+    <button (click)="cadastrarReceita()">Salvar receita</button>
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Buscar receita por ID</h2>
+
+    <input
+      type="number"
+      placeholder="Digite o ID da receita"
+      [(ngModel)]="buscarReceita"
+    />
+
+    <button (click)="buscarReceita()">Buscar</button>
+
+    <div *ngIf="receitaEncontrada">
+      <p><strong>ID:</strong> {{ receitaEncontrada.id }}</p>
+      <p><strong>Nome:</strong> {{ receitaEncontrada.nome }}</p>
+      <p><strong>Tempo de preparo:</strong> {{ receitaEncontrada.tempoPreparo }}</p>
+      <p><strong>Custo aproximado:</strong> {{ receitaEncontrada.custoAproximado }}</p>
+    </div>
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Excluir receita</h2>
+
+    <input
+      type="number"
+      placeholder="ID da receita"
+      [(ngModel)]="idExcluirReceita"
+    />
+
+    <button (click)="excluirReceita()">Excluir receita</button>
+  </div>
+
+  <br>
+
+  <div>
+    <h2>Cadastrar ingrediente</h2>
+
+    <input
+      type="text"
+      placeholder="Nome do ingrediente"
+      [(ngModel)]="nomeIngrediente"
+    />
+
+    <input
+      type="number"
+      placeholder="ID da receita"
+      [(ngModel)]="idReceitaIngrediente"
+    />
+
+    <button (click)="cadastrarIngrediente()">Salvar ingrediente</button>
+  </div>
+
+  <br>
+
+
+  <br>
+
+  <div>
+    <h2>Buscar ingrediente por ID</h2>
+
+    <input
+      type="number"
+      placeholder="Digite o ID do ingrediente"
+      [(ngModel)]="idBuscaIngrediente"
+    />
+
+    <button (click)="buscarIngrediente()">Buscar</button>
+
+    <div *ngIf="ingredienteEncontrado">
+      <p><strong>ID:</strong> {{ ingredienteEncontrado.id }}</p>
+      <p><strong>Nome:</strong> {{ ingredienteEncontrado.nome }}</p>
+    </div>
+  </div>
+
+  <br>
+
+
+  <div>
+    <h2>Excluir ingrediente</h2>
+
+    <input
+      type="number"
+      placeholder="ID do ingrediente"
+      [(ngModel)]="idExcluirIngrediente"
+    />
+
+    <button (click)="excluirIngrediente()">Excluir ingrediente</button>
+  </div>
+
+  <br>
+
+  <p *ngIf="mensagem">{{ mensagem }}</p>
+</div>
